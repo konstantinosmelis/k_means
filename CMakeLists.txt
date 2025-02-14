@@ -3,7 +3,7 @@ project(k_means)
 
 # CXX flags
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_FLAGS    "-Wall -Wextra -O2")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
 # Useful variables
 set(HEADERS_DIR         "Includes")
@@ -23,7 +23,7 @@ set(CMAKE_CONFIGURATION_TYPES "Debug;Release;RelWithDebInfo")
 target_compile_options(k_means PRIVATE
         $<$<CONFIG:Debug>:${CMAKE_CXX_FLAGS} -g -O0>
         $<$<CONFIG:Release>:${CMAKE_CXX_FLAGS} -O3 -DNDEBUG>
-        $<$<CONFIG:RelWithDebInfo>:${CMAKE_CXX_FLAGS} -g>
+        $<$<CONFIG:RelWithDebInfo>:${CMAKE_CXX_FLAGS} -g -O2>
 )
 
 # Project includes
